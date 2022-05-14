@@ -3,13 +3,13 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export const sequelize = new Sequelize(
-  'svetomir' as string,
+  'brigmebel' as string,
   'postgres' as string,
   'qwerty' as string,
   {
     host: 'localhost',
     dialect: 'postgres',
-      // u don't need that
+    // u don't need that
     port: 5433
   }
 )
