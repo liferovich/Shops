@@ -1,0 +1,139 @@
+.cart_img {
+    max-height: 200px;
+}
+table.cart-table {
+    table-layout: fixed;
+}
+.tt-table01 table.cart-table tr > :nth-child(01) {
+    width: 30%;
+    padding-left: 20px;
+}
+.tt-table01 table.cart-table tr td {
+    padding: 20px 5px;
+}
+.tt-table01 table.cart-table tr > * {
+    vertical-align: top;
+}
+.tt-item__remove {
+    cursor: pointer;
+}
+.tt-table01 table.cart-table tr > :nth-child(02) {
+    width: 24%;
+}
+@media (min-width: 1025px) {
+    #tt-nav > ul > li ul {
+        position: absolute;
+        z-index: 5;
+        top: 100%;
+        left: 0;
+        width: 225px;
+    }
+}
+.tt-block-aside.tt-block-aside__shadow {
+    padding: 33px 26px 41px;
+}
+table.cart-table .tt-list-top {
+    margin-top: 0px;
+}
+.mainSlider .slide.selected .img--holder {
+    -webkit-transform: scale3d(1.1, 1.1, 1);
+    transform: scale3d(1.1, 1.1, 1);
+}
+/* .tt-icon {
+    color: #f47629;
+} */
+.tt-input-counter {
+    background: #fff;
+    display: block;
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    line-height: 1em;
+    text-align: center;
+    border: 1px solid #e9e9eb;
+    outline: 0;
+    font-family: Roboto, sans-serif;
+    color: #7b7b7b;
+    border-radius: 4px;
+}
+.custom-select select:focus {
+    border-color: #f4f4f4;
+}
+.container-check {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.custom-checkbox {
+    padding-top: 10px;
+}
+.container-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+.container-check:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.container-check input:checked ~ .checkmark {
+    background-color: #f47629;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container-check input:checked ~ .checkmark:after {
+    display: block;
+}
+.container-check .checkmark:after {
+    content: "\e922";
+    font-family: electrician;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+}
+.tt-obj-cart .tt-obj__btn:first-child {
+    margin-right: 10px;
+}
+@media (min-width: 1025px) {
+    #tt-nav > ul > li > a {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 600;
+        font-family: Poppins, sans-serif;
+        color: #303442;
+        padding: 6px 25px;
+        text-decoration: none;
+        position: relative;
+    }
+}
+.order {
+    margin-top: 4rem;
+}
+.form-default textarea.form-control {
+    padding-top: 13px;
+    height: 8rem;
+}
+#payments, #deliveries {
+    margin: 2rem 0;
+}
