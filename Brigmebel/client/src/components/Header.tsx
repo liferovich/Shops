@@ -24,11 +24,13 @@ export const Header = () => {
                                             <li><NavLink to="/">ГЛАВНАЯ</NavLink></li>
                                             <li className="menu-item-has-children"><NavLink to="/catalog">КАТАЛОГ</NavLink>
                                                 <ul className="sub-menu">
-                                                    <li><NavLink to="/">Наборы мебели для дошкольных учреждений</NavLink></li>
-                                                    <li><NavLink to="/">Кровати</NavLink></li>
-                                                    <li><NavLink to="/">Тумбы</NavLink></li>
-                                                    <li><NavLink to="/">Игровая мебель</NavLink></li>
-                                                    <li><NavLink to="/">Стулья и столы</NavLink></li>
+                                                    <li><NavLink to='/category'>
+                                                        Наборы мебели для дошкольных учреждений
+                                                    </NavLink></li>
+                                                    <li><NavLink to="/catalog">Кровати</NavLink></li>
+                                                    <li><NavLink to="/catalog">Тумбы</NavLink></li>
+                                                    <li><NavLink to="/catalog">Игровая мебель</NavLink></li>
+                                                    <li><NavLink to="/catalog">Стулья и столы</NavLink></li>
                                                 </ul>
                                             </li>
                                             <li><NavLink to="/about">О НАС</NavLink></li>

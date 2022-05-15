@@ -103,6 +103,15 @@ const appSlice = createSlice({
         state.fProducts = state.products.filter(x => selected.indexOf(String(x.force)) > -1);
       }
     },
+    sortByNewProducts: (state, action) => {
+      state.products = state.products.sort((a: Product, b: Product) => parseFloat(a.id) - parseFloat(b.id))
+    },
+    sortByPriceUpProducts: (state, action) => {
+      state.products = state.products.sort((a: Product, b: Product) => a.price - b.price)
+    },
+    sortByPriceDownProducts: (state, action) => {
+      state.products = state.products.sort((a: Product, b: Product) => b.price - a.price)
+    },
     setLoading: (state, action) => {
       state.isLoading = action.payload;
     },
@@ -130,7 +139,7 @@ const appSlice = createSlice({
   },
 });
 
-export const { setLoading, getProduct, addCart, addWishList, deleteCart, filterProducts } = appSlice.actions;
+export const { setLoading, getProduct, addCart, addWishList, deleteCart, filterProducts, sortByPriceUpProducts, sortByPriceDownProducts, sortByNewProducts } = appSlice.actions;
 export const cartLength = (state: any) => state.app.cart.length;
 export const wishlistLength = (state: any) => state.app.wishlist.length;
 export const cart = (state: any) => state.app.cart;

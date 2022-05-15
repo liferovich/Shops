@@ -62,6 +62,9 @@ const Product = () => {
                     <li>
                       <NavLink to='/catalog'>Каталог</NavLink>
                     </li>
+                    <li>
+                      <NavLink to='/category'>{appProduct?.category}</NavLink>
+                    </li>
                     <li className='active'>{appProduct?.name}</li>
                   </ul>
                 </div>

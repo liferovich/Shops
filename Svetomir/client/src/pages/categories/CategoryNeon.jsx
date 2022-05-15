@@ -6,7 +6,10 @@ import {
   products,
   getProducts,
   filterProducts,
-  fProducts
+  fProducts,
+  sortByNewProducts,
+  sortByPriceDownProducts,
+  sortByPriceUpProducts
 } from '../../features/AppSlice'
 
 const CategoryNeon = () => {
@@ -15,15 +18,26 @@ const CategoryNeon = () => {
   const appProducts = useSelector(products)
   const appFProducts = useSelector(fProducts)
 
+  const sortHandler = e => {
+    const val = e.target.value
+    if (val === '2') {
+      sortByPriceUp()
+    } else if (val === '1') {
+      sortByNew()
+    } else {
+      sortByPriceDown()
+    }
+  }
+
   const sortByNew = () => {
-    appProducts.sort((a, b) => parseFloat(a.id) - parseFloat(b.id))
+    dispatch(sortByNewProducts())
   }
 
   const sortByPriceUp = () => {
-    appProducts.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
+    dispatch(sortByPriceUpProducts())
   }
   const sortByPriceDown = () => {
-    appProducts.sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
+    dispatch(sortByPriceDownProducts())
   }
 
   const filterAllProducts = (filters) => {
@@ -138,10 +152,10 @@ const CategoryNeon = () => {
                     </div>
                     <div className='tt-filters-select'>
                       <div className='custom-select'>
-                        <select>
-                          <option onClick={sortByNew}>Новинки</option>
-                          <option onClick={sortByPriceUp}>По цене ↑</option>
-                          <option onClick={sortByPriceDown}>По цене ↓</option>
+                        <select onChange={e => sortHandler(e)}>
+                          <option value="1">Новинки</option>
+                          <option value="2">По цене ↑</option>
+                          <option value="3">По цене ↓</option>
                         </select>
                       </div>
                     </div>

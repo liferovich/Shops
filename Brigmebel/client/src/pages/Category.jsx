@@ -4,13 +4,13 @@ import { NavLink } from 'react-router-dom'
 import ProductItem from '../components/ProductItem'
 import {
   products,
-  getAllProducts,
+  getProducts,
   sortByNewProducts,
   sortByPriceDownProducts,
   sortByPriceUpProducts
 } from '../features/AppSlice'
 
-const Catalog = () => {
+const Category = () => {
   const dispatch = useDispatch()
   const appProducts = useSelector(products)
 
@@ -37,7 +37,7 @@ const Catalog = () => {
   }
 
   useEffect(() => {
-    dispatch(getAllProducts())
+    dispatch(getProducts('Наборы мебели для дошкольных учреждений'))
   }, [dispatch])
 
   return (
@@ -48,12 +48,17 @@ const Catalog = () => {
             <div className='col-lg-12'>
               <div className='breadcrumb-wrapper breadcrumb-bg'>
                 <div className='breadcrumb-content'>
-                  <h2 className='breadcrumb-content__title'>Каталог</h2>
+                  <h2 className='breadcrumb-content__title'> Наборы мебели для дошкольных учреждений</h2>
                   <ul className='breadcrumb-content__page-map'>
                     <li>
                       <NavLink to='/'>Главная</NavLink>
                     </li>
-                    <li className='active'>Каталог</li>
+                    <li>
+                      <NavLink to='/catalog'>Каталог</NavLink>
+                    </li>
+                    <li className='active'>
+                      Наборы мебели для дошкольных учреждений
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -158,4 +163,4 @@ const Catalog = () => {
   )
 }
 
-export default Catalog
+export default Category
