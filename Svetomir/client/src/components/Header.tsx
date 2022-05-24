@@ -55,12 +55,15 @@ export const Header = () => {
                             </div>
                             <div className="tt-obj tt-obj-cart js-dropdown-cart">
                                 <NavLink to="/wishlist" className="tt-obj__btn">
-                                    <i className="tt-icon  icon-favorite"></i>
+                                    <i className="tt-icon icon-favorite"></i>
                                     <div className="tt-obj__badge">{productWishlistLength}</div>
                                 </NavLink>
                                 <NavLink to="/cart" className="tt-obj__btn"><i
                                     className="icon-808584"></i>
                                     <div className="tt-obj__badge">{productCartLength}</div>
+                                </NavLink>
+                                <NavLink to="/register" className="tt-obj__btn"><i
+                                    className="tt-icon icon-user"></i>
                                 </NavLink>
                             </div>
 

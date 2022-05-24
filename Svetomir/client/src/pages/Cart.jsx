@@ -2,13 +2,14 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import CartItem from '../components/CartItem'
-import { addOrder, cart, orderCost } from '../features/AppSlice'
+import { addOrder, cart, id, orderCost } from '../features/AppSlice'
 
 const Cart = () => {
     const dispatch = useDispatch();
     const cartProducts = useSelector(cart)
     const totalOrderCost = useSelector(orderCost)
     const ids = cartProducts.map((product) => product.id);
+    const userId = useSelector(id)
     const [data, setData] = useState({
         products: ids,
         total: totalOrderCost,
@@ -22,7 +23,8 @@ const Cart = () => {
         build: '',
         flat: '',
         payment: 'Карта',
-        delivery: 'Почта'
+        delivery: 'Почта',
+        user: userId
     });
 
     const sendProductOrder = (e) => {

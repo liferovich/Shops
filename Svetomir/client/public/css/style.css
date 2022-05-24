@@ -16878,3 +16878,14 @@ form {
     color: #f47629;
 }
 .tt-breadcrumb{background-image: url('../images/breadcrumb_bg.jpg')}
+.icon-user {
+    background-image: url(../images/user.png);
+    width: 19px;
+    height: 19px;
+    display: block;
+    background-size: contain;
+    margin-left: 10px;
+}
+.tt-table01 table.order-table tr td, .tt-table01 table.order-table tr th{
+    width: auto;
+}

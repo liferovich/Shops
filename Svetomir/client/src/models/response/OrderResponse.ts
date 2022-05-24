@@ -2,7 +2,12 @@ export interface OrderResponse {
     order: Order
 }
 
+export interface OrdersResponse {
+    orders: Order[]
+}
+
 export interface Order {
+    id: number,
     products: number[],
     total: number,
     email: string,
@@ -16,4 +21,5 @@ export interface Order {
     flat: string,
     payment: string,
     delivery: string,
+    user: number
 }

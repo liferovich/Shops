@@ -1,21 +1,22 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { login, register } from '../features/AppSlice'
 
 const Register = () => {
-  const [data, setData] = useState({
-    email: '',
-    password: '',
-    phone: '',
-    comment: '',
-    index: '',
-    city: '',
-    street: '',
-    build: '',
-    flat: ''
-  })
+  const [emailLog, setEmailLog] = useState('')
+  const [passLog, setPassLog] = useState('')
+  const [emailReg, setEmailReg] = useState('')
+  const [passReg, setPassReg] = useState('')
+  const dispatch = useDispatch()
 
-  const changeHandler = e => {
-    const name = e.target.name
-    setData({ ...data, [`${name}`]: e.target.value })
+  const onLogin = e => {
+    dispatch(login({ email: emailLog, password: passLog }))
+    e.preventDefault()
+  }
+
+  const onRegister = e => {
+    dispatch(register({ email: emailReg, password: passReg }))
+    e.preventDefault()
   }
 
   return (
@@ -28,58 +29,14 @@ const Register = () => {
       <div className='section-indent-extra'>
         <div className='container container-lg-fluid'>
           <div className='section__wrapper02 tt-contact-wrapper pt-4'>
-            <div className='section-title max-width-01'>
-              <div className='section-title__02'>Регистрация</div>
-            </div>
             <div className='row justify-content-center'>
-              <div className='col-md-8'>
-                <form id='registerform' className='form-default'>
-                  <div className='form-group'>
-                    <input
-                      type='text'
-                      id='firstname'
-                      name='firstname'
-                      className='form-control'
-                      placeholder='Имя*'
-                      value={data.firastname}
-                      required
-                      onChange={changeHandler}
-                    />
-                  </div>
-                  <div className='form-group'>
-                    <input
-                      type='text'
-                      id='lastname'
-                      name='lastname'
-                      className='form-control'
-                      placeholder='Фамилия*'
-                      value={data.lastname}
-                      required
-                      onChange={changeHandler}
-                    />
-                  </div>
-                  <div className='form-group'>
-                    <input
-                      type='text'
-                      id='middlename'
-                      name='middlename'
-                      className='form-control'
-                      placeholder='Отчество*'
-                      value={data.middlename}
-                      onChange={changeHandler}
-                    />
-                  </div>
-                  <div className='form-group'>
-                    <input
-                      type='date'
-                      id='date'
-                      name='date'
-                      className='form-control'
-                      placeholder='Дата рождения'
-                      value={data.date}
-                      onChange={changeHandler}
-                    />
-                  </div>
+              <div className='col-md-6'>
+                <div className="section-title"><div className='section-title__02'>Авторизация</div></div>
+                <form
+                  id='loginform'
+                  className='form-default'
+                  onSubmit={onLogin}
+                >
                   <div className='form-group'>
                     <input
                       type='text'
@@ -87,9 +44,9 @@ const Register = () => {
                       name='email'
                       className='form-control'
                       placeholder='Email*'
-                      value={data.email}
+                      value={emailReg}
+                      onChange={e => setEmailLog(e.target.value)}
                       required
-                      onChange={changeHandler}
                     />
                   </div>
                   <div className='form-group'>
@@ -99,9 +56,87 @@ const Register = () => {
                       name='password'
                       className='form-control'
                       placeholder='Пароль*'
-                      value={data.password}
                       required
-                      onChange={changeHandler}
+                      value={passReg}
+                      onChange={e => setPassLog(e.target.value)}
+                    />
+                  </div>
+                  <div className='form-group text-center'>
+                    <button className='tt-btn btn__color01' type='submit'>
+                      <span className='icon-lightning'></span>Войти
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div className='col-md-6'>
+              <div className="section-title"><div className='section-title__02'>Регистрация</div></div>
+                <form
+                  id='registerform'
+                  className='form-default'
+                  onSubmit={onRegister}
+                >
+                  <div className='form-group'>
+                    <input
+                      type='text'
+                      id='firstname'
+                      name='firstname'
+                      className='form-control'
+                      placeholder='Имя*'
+                      value=''
+                    />
+                  </div>
+                  <div className='form-group'>
+                    <input
+                      type='text'
+                      id='lastname'
+                      name='lastname'
+                      className='form-control'
+                      placeholder='Фамилия*'
+                      value=''
+                    />
+                  </div>
+                  <div className='form-group'>
+                    <input
+                      type='text'
+                      id='middlename'
+                      name='middlename'
+                      className='form-control'
+                      placeholder='Отчество*'
+                      value=''
+                    />
+                  </div>
+                  <div className='form-group'>
+                    <input
+                      type='date'
+                      id='date'
+                      name='date'
+                      className='form-control'
+                      placeholder='Дата рождения'
+                      value=''
+                    />
+                  </div>
+                  <div className='form-group'>
+                    <input
+                      type='text'
+                      id='email'
+                      name='email'
+                      className='form-control'
+                      placeholder='Email*'
+                      value={emailReg}
+                      onChange={e => setEmailReg(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className='form-group'>
+                    <input
+                      type='password'
+                      id='password'
+                      name='password'
+                      className='form-control'
+                      placeholder='Пароль*'
+                      required
+                      value={passReg}
+                      onChange={e => setPassReg(e.target.value)}
                     />
                   </div>
                   <div className='form-group text-center'>

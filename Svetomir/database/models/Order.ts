@@ -52,6 +52,9 @@ const Order = sequelize.define('Order', {
     delivery: {
         type: DataTypes.STRING,
     },
+    user: {
+        type: DataTypes.INTEGER
+    }
 
 });
 
