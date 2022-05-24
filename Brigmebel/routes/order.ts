@@ -4,3 +4,4 @@ import { default as orderController } from '../controllers/order.controller';
 export const orderRouter = Router();
 
 orderRouter.post('/', orderController.addOrder);
+orderRouter.get('/:id', orderController.getOrders);

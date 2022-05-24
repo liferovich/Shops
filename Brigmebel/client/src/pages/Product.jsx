@@ -118,6 +118,10 @@ const Product = () => {
                             Размеры:{' '}
                             <span class='value'>{appProduct?.size}</span>
                           </p>
+                          <p class='single-info'>
+                            Материал:{' '}
+                            <span class='value'>{appProduct?.material}</span>
+                          </p>
 
                           <p class='product-description'>
                             {appProduct?.description}

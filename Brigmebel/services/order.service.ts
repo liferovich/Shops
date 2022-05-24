@@ -22,6 +22,20 @@ class OrderService {
 
         return newOrder;
     }
+
+    async getOrders(id: number) {
+        let orders = await sequelize.model('Order').findAll({
+            where: {
+                user: id
+            }
+        });
+
+        if (!orders) {
+            orders = [];
+        }
+
+        return orders;
+    }
 }
 
 export default new OrderService();

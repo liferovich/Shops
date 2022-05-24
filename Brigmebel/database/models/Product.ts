@@ -29,6 +29,9 @@ const Product = sequelize.define('Product', {
     },
     size: {
         type: DataTypes.STRING,
+    },
+    material: {
+        type: DataTypes.STRING,
     }
 });
 

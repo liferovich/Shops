@@ -2,10 +2,11 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import CartItem from '../components/CartItem'
-import { addOrder, cart, orderCost } from '../features/AppSlice'
+import { addOrder, cart, id, orderCost, user } from '../features/AppSlice'
 
 const Cart = () => {
   const dispatch = useDispatch()
+  const userId = useSelector(id)
   const cartProducts = useSelector(cart)
   const totalOrderCost = useSelector(orderCost)
   const ids = cartProducts.map(product => product.id)
@@ -22,7 +23,8 @@ const Cart = () => {
     build: '',
     flat: '',
     payment: 'Карта',
-    delivery: 'Почта'
+    date: Date.now(),
+    user: userId
   })
 
   const sendProductOrder = e => {
@@ -274,35 +276,17 @@ const Cart = () => {
                           </div>
 
                           <div className='col-12 col-md-6' id='deliveries'>
-                            <h4>Способ доставки:</h4>
+                            <h4>Дата доставки:</h4>
                             <div className='form-group row'>
-                              <div className='col-12 custom-checkbox'>
-                                <label className='container-check'>
-                                  Почтой
-                                  <input
-                                    type='radio'
-                                    name='delivery'
-                                    value='Почта'
-                                    id='delivery_01'
-                                    onChange={changeHandler}
-                                    checked={data.delivery === 'Почта'}
-                                  />
-                                  <span className='checkmark'></span>
-                                </label>
-                              </div>
-                              <div className='col-12 custom-checkbox'>
-                                <label className='container-check'>
-                                  Курьером
-                                  <input
-                                    type='radio'
-                                    name='delivery'
-                                    value='Курьер'
-                                    id='delivery_02'
-                                    onChange={changeHandler}
-                                    checked={data.delivery === 'Курьер'}
-                                  />
-                                  <span className='checkmark'></span>
-                                </label>
+                              <div className='col-md-8'>
+                                <input
+                                  type="date"
+                                  id='date'
+                                  name='date'
+                                  value={data.date}
+                                  className='form-control'
+                                  onChange={changeHandler}
+                                />
                               </div>
                             </div>
                           </div>

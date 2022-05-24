@@ -17,6 +17,20 @@ class OrderController {
             }
         }
     }
+    async getOrders(req: express.Request, res: express.Response) {
+        try {
+            const id = req.params.id;
+            const orders = await orderService.getOrders(Number(id));
+
+            return res.json({orders});
+        } catch (err: any) {
+            if (err.status) {
+                res.status(err.status).json({ error: { message: err.message } });
+            } else {
+                res.status(500).json({ error: { message: 'Server error..' } });
+            }
+        }
+    }
 }
 
 export default new OrderController();

@@ -125,17 +125,17 @@ const Category = () => {
                           <div className='sidebar-sub-widget-wrapper'>
                             <div className='sidebar-sub-widget'>
                               <h4 className='sidebar-sub-widget__title sidebar-sub-widget__title--abs-icon'>
-                                Производитель
+                                Материал
                               </h4>
                               <ul className='single-sidebar-widget__category-list single-sidebar-widget__category-list--abs-icon'>
                                 <li>
-                                  <a href='shop-left-sidebar.html#'>Ангстрем</a>
+                                  <a href='shop-left-sidebar.html#'>МДФ</a>
                                 </li>
                                 <li>
-                                  <a href='shop-left-sidebar.html#'>Шатура</a>
+                                  <a href='shop-left-sidebar.html#'>ЛДСП</a>
                                 </li>
                                 <li>
-                                  <a href='shop-left-sidebar.html#'>Мария</a>
+                                  <a href='shop-left-sidebar.html#'>Древесина</a>
                                 </li>
                               </ul>
                             </div>

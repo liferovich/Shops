@@ -33,7 +33,13 @@ export const Header = () => {
                                                     <li><NavLink to="/catalog">Стулья и столы</NavLink></li>
                                                 </ul>
                                             </li>
-                                            <li><NavLink to="/about">О НАС</NavLink></li>
+                                            <li className="menu-item-has-children"><NavLink to="/about">О НАС</NavLink>
+                                            <ul className="sub-menu">
+                                                    <li><NavLink to='/about/about1'>Страница 1</NavLink></li>
+                                                    <li><NavLink to='/about/about2'>Страница 2</NavLink></li>
+                                                    <li><NavLink to='/about/about3'>Страница 3</NavLink></li>
+                                                </ul>
+                                            </li>
                                             <li><NavLink to="/contacts">КОНТАКТЫ</NavLink></li>
                                         </ul>
                                     </nav>

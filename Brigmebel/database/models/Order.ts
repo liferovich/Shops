@@ -49,9 +49,12 @@ const Order = sequelize.define('Order', {
     payment: {
         type: DataTypes.STRING,
     },
-    delivery: {
-        type: DataTypes.STRING,
+    date: {
+        type: DataTypes.DATE,
     },
+    user: {
+        type: DataTypes.INTEGER,
+    }
 
 });
 
