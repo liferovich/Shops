@@ -44,7 +44,7 @@ const Register = () => {
                       name='email'
                       className='form-control'
                       placeholder='Email*'
-                      value={emailReg}
+                      value={emailLog}
                       onChange={e => setEmailLog(e.target.value)}
                       required
                     />
@@ -57,7 +57,7 @@ const Register = () => {
                       className='form-control'
                       placeholder='Пароль*'
                       required
-                      value={passReg}
+                      value={passLog}
                       onChange={e => setPassLog(e.target.value)}
                     />
                   </div>

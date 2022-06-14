@@ -10,6 +10,6 @@ export const sequelize = new Sequelize(
     host: 'localhost',
     dialect: 'postgres',
       // u don't need that
-    // port: 5433
+    port: 5433
   }
 )
